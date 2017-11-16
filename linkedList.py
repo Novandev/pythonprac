@@ -65,11 +65,33 @@ class linked_list:
             #increments the current node( at the beginning it will be the head node)
             current_node= current_node.next
             #if the current index is equal to the one passed in
-            if current_index ==  index:
+            if current_index == index:
                 #return the data of that node
                  return current_node.data
              #otherwise, increment the current index and keep going
             current_index +=1
+
+    def delete(self,index):
+        #make sure you cant go past the last node
+        if index >= self.length():
+            print("GET index out of range")
+            return None
+        #looks at the current index
+        current_index = 0
+        current_node = self.head
+        while True:
+            #when a node is being erased, after the node is erased, you have to make sure the node previous to it points to the node after the one you erased
+            last_node = current_node
+            current_node = current_node.next
+            if current_index == index:
+                #when node is being erased, just the pointers are changed
+                last_node.next = current_node.next
+                #breaks out and returns, changing the list an setting it
+                return
+            #if its not found you increase the indexing
+            current_index+=1
+
+
 
 
 
@@ -80,3 +102,5 @@ my_list.append(2)
 my_list.append(3)
 my_list.display()
 print(my_list.get(2))
+my_list.delete(2)
+my_list.display()
