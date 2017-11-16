@@ -51,6 +51,27 @@ class linked_list:
         #prints elements
         print(elems)
 
+    #passes in the index of the data to search for
+    def get(self,index):
+        #make sure you cant go past the last node
+        if index >= self.length():
+            print("GET index out of range")
+            return None
+        #contains the current index that were looking at
+        current_index = 0
+        #the current node that were looking at, starts off at head
+        current_node = self.head
+        while True:
+            #increments the current node( at the beginning it will be the head node)
+            current_node= current_node.next
+            #if the current index is equal to the one passed in
+            if current_index ==  index:
+                #return the data of that node
+                 return current_node.data
+             #otherwise, increment the current index and keep going
+            current_index +=1
+
+
 
 my_list = linked_list()
 
@@ -58,3 +79,4 @@ my_list.append(1)
 my_list.append(2)
 my_list.append(3)
 my_list.display()
+print(my_list.get(2))
