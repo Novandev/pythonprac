@@ -1,6 +1,6 @@
 def reverse(listo):
     listo =list(sys.argv[1:])
-    print(listo)
+    #print(listo)
     print(" ".join(listo[::-1]))
 
 
