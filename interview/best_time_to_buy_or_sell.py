@@ -28,23 +28,25 @@ Explanation: In this case, no transaction is done, i.e. max profit = 0.
 def best_time_to_buy_my_attempt(stocks):
 
     '''
-    
+    This uses a shortened version of the peaks and valley approach n the following manner
+
+    We start off at position 1,and if the current sale price is more than the previous, the profit is the change in prices, which is defined as
+    current = previous, this get added to the total profit
     '''
     profit = 0
     i = 0
-    for j in range(1,len(stocks)):
+    for j in range(1,len(stocks)): # we start out at 1 to have access to the previous
         print(stocks[j], stocks[j-1])
-        if stocks[j] > stocks[j-1]:
+        if stocks[j] > stocks[j-1]: # if the current price is more than the previous buy price, then your profit went up!
             print(stocks[j-1], stocks[j])
-            profit += stocks[j]-stocks[j-1]
-    print(profit)
+            profit += stocks[j]-stocks[j-1] # add the remainder of these two to the total profit
+    print(profit) #print the total profit
 
 
-
-
-def best_time_to_buy(stocks):
-    pass
 
 
 
 best_time_to_buy_my_attempt([7,1,5,3,6,4])
+
+
+best_time_to_buy_my_attempt([1,2,3,4,5])
