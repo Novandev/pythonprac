@@ -36,9 +36,9 @@ def best_time_to_buy_my_attempt(stocks):
     profit = 0
     i = 0
     for j in range(1,len(stocks)): # we start out at 1 to have access to the previous
-        print(stocks[j], stocks[j-1])
+        # print(stocks[j], stocks[j-1])
         if stocks[j] > stocks[j-1]: # if the current price is more than the previous buy price, then your profit went up!
-            print(stocks[j-1], stocks[j])
+            # print(stocks[j-1], stocks[j])
             profit += stocks[j]-stocks[j-1] # add the remainder of these two to the total profit
     print(profit) #print the total profit
 
